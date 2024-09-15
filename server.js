@@ -1,17 +1,18 @@
 require('dotenv').config();
-require('./passport-setup'); // <-- Ensure passport setup is configured correctly
+require('./passport-setup'); // Ensure passport setup is configured correctly
 const express = require('express');
 const passport = require('passport');
 const session = require('express-session');
 const chatRoutes = require('./routes/chatRoutes');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const axios = require('axios'); // <-- Add axios
-
+const axios = require('axios'); // Add axios
+const mongoose = require('mongoose'); // Add mongoose
 
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:3000',
@@ -22,9 +23,35 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-app.use('/api/chat', chatRoutes);
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/chatbot', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+// Chat Message Schema
+const messageSchema = new mongoose.Schema({
+  userId: { type: String, required: true },
+  messages: { type: Array, required: true },
+});
+
+const Message = mongoose.model('Message', messageSchema);
+
+// Save chat history
+app.post('/api/chat/save', async (req, res) => {
+  const { userId, messages } = req.body;
+  try {
+    await Message.findOneAndUpdate({ userId }, { messages }, { upsert: true });
+    res.status(200).send('Chat history saved');
+  } catch (error) {
+    console.error('Error saving chat history:', error);
+    res.status(500).send('Error saving chat history');
+  }
+});
+
+
 
 // Auth routes
 app.get('/auth/google',
