@@ -1,0 +1,69 @@
+.chatbot {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px 10px 0 0;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+.user {
+    background-color: #74bb9b;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+form {
+    display: flex;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+}
+
+input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+}
+
+button {
+    background-color: #74bb9b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    z-index: 1; /* Ensure it's on top */
+    position: relative; /* Ensure it can be positioned */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 16px; /* Increase font size for visibility */
+}
+
+button:hover {
+    background-color: #5da583;
+}

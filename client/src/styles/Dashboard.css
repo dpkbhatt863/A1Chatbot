@@ -1,0 +1,99 @@
+.dashboard {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dashboard-content {
+    display: flex;
+    gap: 2rem;
+    height: calc(100vh - 200px); /* Adjust this value as needed */
+    min-height: 500px; /* Set a minimum height */
+}
+
+.user-info {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem 0;
+}
+
+.chatbot-container {
+    flex: 2;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.chatbot-title h2 {
+    color: #74bb9b;
+    margin: 0;
+}
+
+.chatbot-title p {
+    margin: 0.5rem 0 0;
+    color: #666;
+}
+
+.ai-bot-image {
+    width: 80px;
+    height: 80px;
+   
+    object-fit: cover;
+}
+
+.chatbot-wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+h2 {
+    color: #74bb9b;
+    margin-top: 0;
+}
+
+h3 {
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .chatbot-container {
+        height: 500px; /* Set a fixed height for mobile */
+    }
+    
+    .chatbot-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ai-bot-image {
+        margin-top: 1rem;
+    }
+}
