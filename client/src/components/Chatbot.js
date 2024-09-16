@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../styles/Chatbot.css';
 
+const url = process.env.REACT_APP_API_URL
+
 function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -41,7 +43,7 @@ function Chatbot() {
   
     try {
       console.log("Sending message:", { message: input }); // Log the message being sent
-      const response = await axios.post('http://localhost:3001/api/chat/message', {
+      const response = await axios.post(url + '/api/chat/message', {
         message: input // Send the message
       });
       

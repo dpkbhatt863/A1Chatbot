@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api/chat';
+const API_URL = url + '/api/chat';
 
 let sessionId = null; // Consider using a more persistent storage method
 

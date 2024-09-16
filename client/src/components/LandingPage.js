@@ -1,8 +1,10 @@
 import React from 'react';
 
+const url = process.env.REACT_APP_API_URL
+
 function LandingPage() {
   const handleGoogleLogin = () => {
-    window.open('http://localhost:3001/auth/google', '_self');
+    window.open(url + '/auth/google', '_self');
   };
 
   return (

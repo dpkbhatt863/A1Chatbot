@@ -14,7 +14,7 @@ const apiKey = process.env.GROQCLOUD_API_KEY;
 
 // Middleware setup
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors());
 app.use(session({ secret: 'your-session-secret', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -23,7 +23,7 @@ app.use(passport.session());
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
   console.log('Google auth callback - user:', req.user);
-  res.redirect('http://localhost:3000/dashboard');
+  res.redirect(process.env.WEB_URL + '/dashboard');
 });
 
 app.get('/api/logout', (req, res, next) => {

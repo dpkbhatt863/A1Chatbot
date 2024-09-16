@@ -44,7 +44,7 @@ function HomePage({ user }) {
         ) : (
           <p>Log in to access your personalized dashboard and start chatting with our Llama-powered AI.</p>
         )}
-        {!user && <a href="http://localhost:3001/auth/google" className="cta-button">Log In with Google</a>}
+        {!user && <a href={url + "/auth/google"} className="cta-button">Log In with Google</a>}
         {user && <Link to="/dashboard" className="cta-button">Go to Dashboard</Link>}
       </section>
 

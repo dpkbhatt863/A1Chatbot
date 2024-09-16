@@ -6,12 +6,14 @@ import Chatbot from './components/Chatbot';
 import Dashboard from './pages/Dashboard';
 import './styles/App.css';
 
+const url = process.env.REACT_APP_API_URL
+
 function AppContent() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/current_user', {
+    fetch(url + '/api/current_user', {
       credentials: 'include',
     })
       .then(res => res.json())
@@ -24,7 +26,7 @@ function AppContent() {
   }, []);
 
   const handleLogout = () => {
-    fetch('http://localhost:3001/api/logout', {
+    fetch(url + '/api/logout', {
       credentials: 'include',
     })
       .then(() => {
@@ -43,7 +45,7 @@ function AppContent() {
           {user ? (
             <button onClick={handleLogout}>Logout</button>
           ) : (
-            <a href="http://localhost:3001/auth/google">Login with Google</a>
+            <a href={url + "/auth/google"}>Login with Google</a>
           )}
         </nav>
       </header>

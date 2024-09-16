@@ -2,6 +2,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const users = {};
+const url = process.env.REACT_APP_API_URL
 
 const dotenv = require('dotenv');
 dotenv.config(); // Load environment variables from .env
@@ -24,7 +25,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID, // Your Google Client ID
       clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Your Google Client Secret
-      callbackURL: 'http://localhost:3001/auth/google/callback', // Redirect URI
+      callbackURL: url + '/auth/google/callback', // Redirect URI
     },
     (accessToken, refreshToken, profile, done) => {
       console.log('Google profile:', profile); // Add this line for debugging
