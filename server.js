@@ -57,7 +57,6 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Example processMessage function
 const processMessage = async (message) => {
   const apiKey = process.env.GROQCLOUD_API_KEY;
   
