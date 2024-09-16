@@ -23,7 +23,7 @@ app.use(passport.session());
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
   console.log('Google auth callback - user:', req.user);
-  res.redirect('/dashboard');
+  res.redirect(process.env.WEB_URL + '/dashboard');
 });
 
 app.get('/api/logout', (req, res, next) => {
