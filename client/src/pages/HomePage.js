@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
 import aiAssistantImage from '../assets/ai-assistant.png'; 
 
+const url = process.env.REACT_APP_API_URL
+
 function HomePage({ user }) {
   return (
     <div className="home-page">

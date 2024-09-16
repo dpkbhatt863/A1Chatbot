@@ -2,7 +2,11 @@ import React from 'react';
 import Chatbot from '../components/Chatbot';
 import '../styles/Dashboard.css';
 import aiBotImage from '../assets/ai-assistant.png'; 
+
 function Dashboard({ user }) {
+
+  console.log(user)
+
   return (
     <div className="dashboard">
       <div className="dashboard-content">
