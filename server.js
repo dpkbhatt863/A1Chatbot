@@ -15,7 +15,16 @@ const apiKey = process.env.GROQCLOUD_API_KEY;
 // Middleware setup
 app.use(bodyParser.json());
 app.use(cors({ origin: process.env.WEB_URL, credentials: true }));
-app.use(session({ secret: 'your-session-secret', resave: false, saveUninitialized: false }));
+app.use(session({ 
+  secret: 'your-session-secret', 
+  resave: false, 
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+    httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+    sameSite: 'none' 
+  }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
