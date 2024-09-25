@@ -31,8 +31,13 @@ app.use(passport.session());
 // Auth routes
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-  console.log('Google auth callback - user:', req.user);
-  res.redirect(process.env.WEB_URL + '/dashboard');
+  if (req.user) {
+    console.log('Authentication successful:', req.user);
+    res.redirect(process.env.WEB_URL + '/dashboard');
+  } else {
+    console.log('Authentication failed, redirecting to home page.');
+    res.redirect('/');
+  }
 });
 
 app.get('/api/logout', (req, res, next) => {
