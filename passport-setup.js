@@ -2,14 +2,12 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const users = {};
-const url = process.env.WEB_URL
 
 const dotenv = require('dotenv');
 dotenv.config(); // Load environment variables from .env
 
 passport.serializeUser((user, done) => {
   console.log('Serializing user:', user);
-  users[user.id] = user;
   done(null, user.id);
 });
 
@@ -28,15 +26,19 @@ passport.use(
       callbackURL: '/auth/google/callback', // Redirect URI
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log('Google profile:', profile); // Add this line for debugging
+
+      if (users[profile.id]) {
+        return done(null, users[profile.id]); // User already exists
+      }
+
       const user = {
         id: profile.id,
         displayName: profile.displayName,
         email: profile.emails && profile.emails[0] ? profile.emails[0].value : null,
         photo: profile.photos && profile.photos[0] ? profile.photos[0].value : null,
       };
-      console.log('Created user object:', user); // Add this line for debugging
-      users[user.id] = user;
+
+      users[profile.id] = user;
       return done(null, user); // Pass the user object to serialize into the session
     }
   )
