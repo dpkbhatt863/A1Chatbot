@@ -34,8 +34,8 @@ passport.use(
       const user = {
         id: profile.id,
         displayName: profile.displayName,
-        email: profile.emails && profile.emails[0] ? profile.emails[0].value : null,
-        photo: profile.photos && profile.photos[0] ? profile.photos[0].value : null,
+        email: profile.emails[0].value,
+        photo: profile.photos[0].value,
       };
 
       users[profile.id] = user;
@@ -43,3 +43,5 @@ passport.use(
     }
   )
 );
+
+module.exports = passport;
