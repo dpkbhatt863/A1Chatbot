@@ -1,8 +1,10 @@
 import React from 'react';
 
+const url = "https://a1chatbotbackend.onrender.com"
+
 function Login() {
   const handleGoogleLogin = () => {
-    window.open("https://a1chatbotbackend.onrender.com" + '/auth/google', '_self');
+    window.open(url + '/auth/google', '_self');
   };
 
   return (
