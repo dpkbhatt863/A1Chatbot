@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../styles/Chatbot.css';
 
-const url = process.env.REACT_APP_API_URL
+const url = "https://a1chatbotbackend.onrender.com"
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
