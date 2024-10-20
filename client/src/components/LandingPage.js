@@ -1,6 +1,6 @@
 import React from 'react';
 
-const url = process.env.REACT_APP_API_URL
+const url = "https://a1chatbotbackend.onrender.com"
 
 function LandingPage() {
   const handleGoogleLogin = () => {
