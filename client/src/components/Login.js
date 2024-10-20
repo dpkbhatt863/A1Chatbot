@@ -2,7 +2,7 @@ import React from 'react';
 
 function Login() {
   const handleGoogleLogin = () => {
-    window.open(url + '/auth/google', '_self');
+    window.open("https://a1chatbotbackend.onrender.com" + '/auth/google', '_self');
   };
 
   return (
