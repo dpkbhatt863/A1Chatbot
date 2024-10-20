@@ -6,7 +6,7 @@ import Chatbot from './components/Chatbot';
 import Dashboard from './pages/Dashboard';
 import './styles/App.css';
 
-const url = process.env.REACT_APP_API_URL
+const url = "https://a1chatbotbackend.onrender.com"
 
 function AppContent() {
   const [user, setUser] = useState(null);
