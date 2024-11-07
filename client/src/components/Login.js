@@ -1,6 +1,6 @@
 import React from 'react';
 
-const url = "https://a1chatbotbackend.onrender.com"
+const url = "https://a1chatbot.onrender.com"
 
 function Login() {
   const handleGoogleLogin = () => {
