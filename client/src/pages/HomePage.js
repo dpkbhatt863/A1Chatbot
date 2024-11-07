@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
 import aiAssistantImage from '../assets/ai-assistant.png'; 
 
-const url = "https://a1chatbotbackend.onrender.com"
+const url = "https://a1chatbot.onrender.com"
 
 function HomePage({ user }) {
   return (
