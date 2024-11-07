@@ -29,7 +29,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Auth routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/auth/google', passport.authenticate('google', {
+    scope: ['profile', 'email'],
+    callbackURL: 'https://a1chatbot.onrender.com/auth/google/callback'  // Use HTTPS explicitly
+}));
+
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
   if (req.user) {
     console.log('Authentication successful:', req.user);
