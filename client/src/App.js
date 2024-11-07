@@ -6,7 +6,7 @@ import Chatbot from './components/Chatbot';
 import Dashboard from './pages/Dashboard';
 import './styles/App.css';
 
-const url = "https://a1chatbotbackend.onrender.com"
+const url = "https://a1chatbot.onrender.com"
 
 function AppContent() {
   const [user, setUser] = useState(null);
