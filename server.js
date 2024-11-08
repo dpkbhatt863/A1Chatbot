@@ -12,6 +12,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 const apiKey = process.env.GROQCLOUD_API_KEY;
 
+const WEB_URL = 'https://a1chatbot.vercel.app';
+
 // Middleware setup
 app.use(bodyParser.json());
 app.use(cors({ origin: process.env.WEB_URL, credentials: true }));
@@ -36,7 +38,7 @@ app.get('/auth/google', passport.authenticate('google', {
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
   if (req.user) {
     console.log('Authentication successful:', req.user);
-    res.redirect(process.env.WEB_URL + '/dashboard');
+    res.redirect(WEB_URL + '/dashboard');
   } else {
     console.log('Authentication failed, redirecting to home page.');
     res.redirect('/');
