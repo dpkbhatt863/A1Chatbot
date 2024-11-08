@@ -23,7 +23,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID, // Your Google Client ID
       clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Your Google Client Secret
-      callbackURL: '/auth/google/callback', // Redirect URI
+      callbackURL: `${process.env.WEB_URL}/auth/google/callback`, // Redirect URI
     },
     (accessToken, refreshToken, profile, done) => {
 
