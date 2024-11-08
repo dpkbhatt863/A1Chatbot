@@ -3,7 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const users = {};
 
-const WEB_URL = 'https://a1chatbot.vercel.app';
+const WEB_URL = 'https://a1chatbot.onrender.com';
 
 const dotenv = require('dotenv');
 dotenv.config(); // Load environment variables from .env
