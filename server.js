@@ -30,8 +30,7 @@ app.use(passport.session());
 
 // Auth routes
 app.get('/auth/google', passport.authenticate('google', {
-    scope: ['profile', 'email'],
-    callbackURL: 'https://a1chatbot.onrender.com/auth/google/callback'  // Use HTTPS explicitly
+    scope: ['profile', 'email']
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
