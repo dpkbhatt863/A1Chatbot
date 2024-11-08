@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 
 dotenv.config(); // Load environment variables from .env
 
-const WEB_URL = 'https://a1chatbot.onrender.com';
+const WEB_URL = 'https://a1chatbotfrontend.vercel.app';
 
 passport.serializeUser((user, done) => {
   console.log('Serializing user:', user);
