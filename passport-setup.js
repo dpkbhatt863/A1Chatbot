@@ -3,6 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const users = {};
 
+const WEB_URL = 'https://a1chatbot.vercel.app';
+
 const dotenv = require('dotenv');
 dotenv.config(); // Load environment variables from .env
 
@@ -23,7 +25,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID, // Your Google Client ID
       clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Your Google Client Secret
-      callbackURL: `${process.env.WEB_URL}/auth/google/callback`, // Redirect URI
+      callbackURL: `${WEB_URL}/auth/google/callback`, // Redirect URI
     },
     (accessToken, refreshToken, profile, done) => {
 
