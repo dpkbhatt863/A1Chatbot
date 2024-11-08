@@ -2,7 +2,7 @@
 require('./passport-setup'); // Ensure passport setup is configured correctly
 
 const dotenv = require('dotenv');
-require('dotenv').config();
+dotenv.config();
 
 const express = require('express');
 const passport = require('passport');
