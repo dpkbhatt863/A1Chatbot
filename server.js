@@ -16,7 +16,7 @@ const port = process.env.PORT || 3001;
 const apiKey = process.env.GROQCLOUD_API_KEY;
 
 
-const WEB_URL = 'https://a1chatbot.onrender.com';
+const WEB_URL = 'https://a1chatbot.vercel.app';
 
 // Middleware setup
 app.use(bodyParser.json());
