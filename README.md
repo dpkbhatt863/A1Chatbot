@@ -18,13 +18,13 @@ A web application that provides a chatbot interface with user authentication and
 
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/f658bf06-7c71-4389-80a5-00417a9bfaee" alt="screenshot1" width="200px">
+<img src="https://github.com/user-attachments/assets/f658bf06-7c71-4389-80a5-00417a9bfaee" alt="screenshot1" width="600px">
 
-<img src="https://github.com/user-attachments/assets/e47204b6-1cb1-4c52-9d88-abbebb51b0e6" alt="screenshot2" width="200px">
+<img src="https://github.com/user-attachments/assets/e47204b6-1cb1-4c52-9d88-abbebb51b0e6" alt="screenshot2" width="600px">
 
-<img src="https://github.com/user-attachments/assets/03aaa533-64df-4f94-bf1d-5590bb7a716f" alt="screenshot1" width="200px">
+<img src="https://github.com/user-attachments/assets/03aaa533-64df-4f94-bf1d-5590bb7a716f" alt="screenshot1" width="600px">
 
-<img src="https://github.com/user-attachments/assets/317ad62a-b8a3-4b82-abf6-86f6838a3433" alt="screenshot1" width="200px">
+<img src="https://github.com/user-attachments/assets/317ad62a-b8a3-4b82-abf6-86f6838a3433" alt="screenshot1" width="600px">
 
 
 ## Installation
