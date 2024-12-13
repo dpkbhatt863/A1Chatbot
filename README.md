@@ -1,6 +1,6 @@
 # AI Chatbot Web Application
 
-This repository contains a web application that provides a chatbot interface with user authentication and AI-powered responses. The application is built using React for the frontend and Node.js with Express for the backend.
+A web application that provides a chatbot interface with user authentication and AI-powered responses. The application is built using React for the frontend and Node.js with Express for the backend.
 
 ## Features
 
